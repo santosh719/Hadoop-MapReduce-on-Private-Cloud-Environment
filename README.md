@@ -16,47 +16,68 @@ The first dataset, used for the prototype, is Complete History of Major League B
 ### Steps to install and configure Hadoop cluster 
 
 *	Install a Hadoop cluster, which typically involves unpacking the software(`Hadoop`) on all the machines in the cluster.
+
 *	Create and set up `SSH` certificates, which will be used by Hadoop to communicate between machines in the cluster.
+
 *	 Edit the configuration files – `core-default.xml`, `hdfs-default.xml`, `yarn-default.xml`, `mapred-default.xml`,`etc/hadoop/core-site.xml`, `etc/hadoop/hdfs-site.xml`, `etc/hadoop/yarn-site.xml` and `etc/hadoop/mapred-site.xml`, according to the requirements.
 
 *	To configure the environment in which the Hadoop daemons execute as well as the configuration parameters for the Hadoop daemons use `etc/hadoop/hadoop-env.sh` and `etc/hadoop/yarn-env.sh`. 
 
    Starting the cluster by running following commands on Master node: -
+
 *	 Formatting Namenode:
-```sh
+
+
+```
 $	bin/hadoop namenode -format
 ```
+
 *	Starting Namenode, Datanode and Jobtracker:
-```sh
+
+```
 $	bin/start-dfs.sh
 ```
+
 *	Starting Tasktracer:
-```sh
+
+```
 $	bin/start–mapred.sh
 ```
+
 *	Check if Hadoop started as desired using `jps` command.
 
 
 ### Steps to run MapReduce job
 Once the Hadoop cluster is created and configured,
+
 *	Set up the environment variables – `JAVA_HOME`, `PATH`, `HADOOP_CLASSPATH`.
+
 *	Copy data from `local` to `hdfs` (Hadoop Distributed FileSystem) –
-```sh
+
+
+```
 $	bin/hadoop fs -copyFromLocal <localsrc> <dest>
 ```
+
 *	Compile and create a jar from the MapReduce.java file, which contains the code for mapper and reducer. 
-```sh
+
+```
 $   bin/hadoop com.sun.tools.javac.Main MapReduce.java
 ```
-```sh 
+
+```
 $	jar cf ep.jar MapReduce *.class
 ```
+
 *	Run the application: 
-```sh
+
+```
 $	bin/hadoop jar mr.jar MapReduce <input_dir> <output_dir>
 ```
+
 *	Output:
-```sh
+
+```
 $	bin/hadoop fs -cat <output_dir/part-r-00000>
 ```
 
@@ -64,7 +85,7 @@ $	bin/hadoop fs -cat <output_dir/part-r-00000>
 ### Commands to be executed to run the protoype :
 
 
-```sh
+```
 $ 	bin/hadoop namenode – format
 ```
 ```

@@ -24,15 +24,15 @@ The first dataset, used for the prototype, is Complete History of Major League B
    Starting the cluster by running following commands on Master node: -
 *	 Formatting Namenode:
 ```sh
-    $	bin/hadoop namenode -format
+$	bin/hadoop namenode -format
 ```
 *	Starting Namenode, Datanode and Jobtracker:
 ```sh
-    $	bin/start-dfs.sh
+$	bin/start-dfs.sh
 ```
 *	Starting Tasktracer:
 ```sh
-    $	bin/start–mapred.sh
+$	bin/start–mapred.sh
 ```
 *	Check if Hadoop started as desired using `jps` command.
 
@@ -42,22 +42,22 @@ Once the Hadoop cluster is created and configured,
 *	Set up the environment variables – `JAVA_HOME`, `PATH`, `HADOOP_CLASSPATH`.
 *	Copy data from `local` to `hdfs` (Hadoop Distributed FileSystem) –
 ```sh
-    $	bin/hadoop fs -copyFromLocal <localsrc> <dest>
+$	bin/hadoop fs -copyFromLocal <localsrc> <dest>
 ```
 *	Compile and create a jar from the MapReduce.java file, which contains the code for mapper and reducer. 
 ```sh
-    $   bin/hadoop com.sun.tools.javac.Main MapReduce.java
+$   bin/hadoop com.sun.tools.javac.Main MapReduce.java
 ```
 ```sh 
-    $	jar cf ep.jar MapReduce *.class
+$	jar cf ep.jar MapReduce *.class
 ```
 *	Run the application: 
 ```sh
-    $	bin/hadoop jar mr.jar MapReduce <input_dir> <output_dir>
+$	bin/hadoop jar mr.jar MapReduce <input_dir> <output_dir>
 ```
 *	Output:
 ```sh
-    $	bin/hadoop fs -cat <output_dir/part-r-00000>
+$	bin/hadoop fs -cat <output_dir/part-r-00000>
 ```
 
 

@@ -144,10 +144,10 @@ public class ErrorPos {
     Configuration conf = new Configuration();
     GenericOptionsParser optionParser = new GenericOptionsParser(conf, args);
     String[] remainingArgs = optionParser.getRemainingArgs();
-    if (!(remainingArgs.length != 2 || remainingArgs.length != 4)) {
-      System.err.println("Usage: wordcount <in> <out> [-skip skipPatternFile]");
-      System.exit(2);
-    }
+    // if (!(remainingArgs.length != 2 || remainingArgs.length != 4)) {
+    //   System.err.println("Usage: wordcount <in> <out> [-skip skipPatternFile]");
+    //   System.exit(2);
+    // }
     Job job = Job.getInstance(conf, "word count");
     job.setJarByClass(ErrorPos.class);
     job.setMapperClass(SimpleMapper.class);

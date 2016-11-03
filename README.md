@@ -1,6 +1,7 @@
 # Hadoop MapReduce on Private Cloud Environment
-
-
+ 
+ 
+   
 
 File name | Purpose | New/Modified | Comments
 ------------- | ------------- | ---------- | --------
@@ -16,9 +17,14 @@ The objective of this project is to implement a Hadoop MapReduce environment on 
  of commodity hardware in a reliable, fault-tolerant manner. 
 
 
-In our project we will be running MapReduce on two varied datasets, one for the prototype and second for the final project deliverable. 
+In our project we ran MapReduce jobs on two varied datasets, one for the prototype and second for the final project deliverable. 
 
-The first dataset, used for the prototype, is Complete History of Major League Baseball Stats from 1871 to 2015. This data set contains Major League Baseball’s complete batting and pitching statistics from 1871 to 2015, plus fielding statistics, standings, team stats, park stats, player demographics, managerial records, awards, post-season data, and more. We will run the MapReduce job on this dataset to calculate the average error at each fielding position.
+The first dataset, used for the prototype, is Complete History of Major League Baseball Stats from 1871 to 2015. This data set contains Major League Baseball’s complete batting and pitching statistics from 1871 to 2015, plus fielding statistics, standings, team stats, park stats, player demographics, managerial records, awards, post-season data, and more. We ran the MapReduce job on this dataset to calculate the average error at each fielding position.
+
+The second data, used for the final phase, is Amazon Fine Food Reviews. This dataset consists of 568,454 food reviews Amazon users left up to October 2012. We ran 3 MapReduce jobs to analyze the following questions -
+1. The users who have the most helpful feedback.
+2. The products which are most popular/most reviewed.
+3. The users who most active/users with most number of reviews.
 
 ### Steps to install and configure Hadoop cluster 
 
@@ -73,7 +79,7 @@ $   bin/hadoop com.sun.tools.javac.Main MapReduce.java
 ```
 
 ```
-$	jar cf ep.jar MapReduce *.class
+$	jar cf mr.jar MapReduce *.class
 ```
 
 *	Run the application: 
@@ -89,33 +95,7 @@ $	bin/hadoop fs -cat <output_dir/part-r-00000>
 ```
 
 
-### Commands to be executed to run the protoype :
 
-
-```
-$ 	bin/hadoop namenode – format
-```
-```
-$	bin/start-dfs.sh
-```
-```
-$	bin/hadoop fs -mkdir /app/tmp/data
-```
-```
-$	bin/hadoop fs -copyFromLocal /app/nba_data /app/tmp/data
-```
-```
-$	bin/hadoop com.sun.tools.javac.Main ErrorPos.java
-```
-```
-$	jar cf ep.jar ErrorPos *.class
-```
-```
-$	bin/hadoop jar ep.jar ErrorPos /app/tmp/data /app/tmp/output
-```
-```
-$	bin/hadoop fs -cat /app/tmp/output /part-r-00000>
-```
 
 ### Useful Links
 

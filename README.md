@@ -1,6 +1,13 @@
 # Hadoop MapReduce on Private Cloud Environment
 
 
+
+File name | Purpose | New/Modified | Comments
+------------- | ------------- | ---------- | --------
+ErrorPos.java  | Program to find the error in each fielding position | New | Implemented on The History of Baseball Dataset 
+FineFoodReviews.java  | Program to find most helpful users (users who have the most helpful reviews out of their total reviews) | New | Implemented on Amamzon Fine Food Reviews Dataset (1st Question)
+PopularProduct.java  | Program to find most popular products among all. | New | Implemented on Amamzon Fine Food Reviews Dataset (2nd Question)
+ActiveUser.java  | Program to find most active users | New | Implemented on Amamzon Fine Food Reviews Dataset (3rd Question)
 The objective of this project is to implement a Hadoop MapReduce environment on an isolated private cloud or a private cloud environment. 
 
 > `Hadoop MapReduce` is a software framework 
